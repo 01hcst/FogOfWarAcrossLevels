@@ -82,6 +82,7 @@ namespace FogOfWarAcrossLevels
                 return;
             }
 
+            ShootVision.Init();
             var harmony = new Harmony("henrique.fogofwaracrosslevels");
             harmony.Patch(recalc, prefix: new HarmonyMethod(typeof(LevelVision), nameof(Recalculate_Prefix)));
             harmony.Patch(applyFog, prefix: new HarmonyMethod(typeof(LevelVision), nameof(ApplyFog_Prefix)));
@@ -96,9 +97,29 @@ namespace FogOfWarAcrossLevels
 
         public static void ApplyFog_Prefix(MapComponent __instance, bool[] ___visibleCells)
         {
+            var map = __instance.map;
+            if (map == null || ___visibleCells == null) return;
+
+            // Only right after a recalculation: a later ApplyFog (scope overlay) still has these
+            // cells in the grid. They count as seen directly, so they also feed the level vision.
+            if (FowalMod.Settings.seeShootable && States.GetValue(map, _ => new MapState()).fresh)
+            {
+                try
+                {
+                    var bands = TryGetBands(map, out var count, out var height, out var slot)
+                        ? new ShootVision.Bands { slot = slot, height = height, count = count }
+                        : default;
+                    ShootVision.Reveal(map, ___visibleCells, bands);
+                }
+                catch (Exception e)
+                {
+                    Log.ErrorOnce(Tag + "failed to reveal what colonists can shoot: " + e, 0x46_4F_57_42);
+                }
+            }
+
             try
             {
-                Extend(__instance.map, ___visibleCells);
+                Extend(map, ___visibleCells);
             }
             catch (Exception e)
             {
@@ -111,12 +132,7 @@ namespace FogOfWarAcrossLevels
             var settings = FowalMod.Settings;
             if (map == null || visible == null || (settings.seeDown is false && settings.seeUp is false)) return;
 
-            var bands = map.GetComponent(bandMapType);
-            if (bands == null) return;
-            var bandCount = (int)bandCountField.GetValue(bands);
-            var bandHeight = (int)bandHeightField.GetValue(bands);
-            if (bandCount <= 1 || bandHeight <= 0) return;
-            var slot = (int)slotProperty.GetValue(bands);
+            if (TryGetBands(map, out var bandCount, out var bandHeight, out var slot) is false) return;
 
             var count = map.cellIndices.NumGridCells;
             if (visible.Length != count) return;
@@ -173,6 +189,19 @@ namespace FogOfWarAcrossLevels
                     }
                 }
             }
+        }
+
+        // The levels As above, So below II stacks on this map; slot is 0 if there is only one.
+        private static bool TryGetBands(Map map, out int bandCount, out int bandHeight, out int slot)
+        {
+            bandCount = bandHeight = slot = 0;
+            var bands = map.GetComponent(bandMapType);
+            if (bands == null) return false;
+            bandCount = (int)bandCountField.GetValue(bands);
+            bandHeight = (int)bandHeightField.GetValue(bands);
+            if (bandCount <= 1 || bandHeight <= 0) return false;
+            slot = (int)slotProperty.GetValue(bands);
+            return slot > 0;
         }
 
         private struct Context

@@ -7,3 +7,4 @@
 /home/henrique/.steam/debian-installation/steamapps/common/RimWorld/Mods/FogOfWarAcrossLevels/Source/obj/Release/refint/FogOfWarAcrossLevels.dll
 /home/henrique/.steam/debian-installation/steamapps/common/RimWorld/Mods/FogOfWarAcrossLevels/Source/obj/Release/FogOfWarAcrossLevels.pdb
 /home/henrique/.steam/debian-installation/steamapps/common/RimWorld/Mods/FogOfWarAcrossLevels/Source/obj/Release/ref/FogOfWarAcrossLevels.dll
+/home/henrique/.steam/debian-installation/steamapps/common/RimWorld/Mods/FogOfWarAcrossLevels/Source/obj/Release/FogOfWarAcrossLevels.sourcelink.json

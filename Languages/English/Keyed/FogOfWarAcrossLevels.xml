@@ -7,4 +7,6 @@
   <FOWAL_SeeUpDesc>Colonists who see a cell with open sky above it also see the roof cells near that opening on the levels above.</FOWAL_SeeUpDesc>
   <FOWAL_UpDepth>Upward view depth: {0} tiles</FOWAL_UpDepth>
   <FOWAL_UpDepthDesc>How far from an opening, on the level above, a colonist below can see.</FOWAL_UpDepthDesc>
+  <FOWAL_SeeShootable>See what can be shot</FOWAL_SeeShootable>
+  <FOWAL_SeeShootableDesc>If a colonist has a line of fire to a creature, the same one the game uses for shooting (leaning out around a wall or window edge), that creature is revealed, even where the fog would hide it. Also between levels, with As above, So below II's line of fire through openings.</FOWAL_SeeShootableDesc>
 </LanguageData>

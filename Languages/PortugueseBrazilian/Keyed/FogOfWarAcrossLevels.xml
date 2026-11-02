@@ -7,4 +7,6 @@
   <FOWAL_SeeUpDesc>Os colonos que veem uma célula com céu aberto acima dela também veem as células de telhado perto dessa abertura nos andares de cima.</FOWAL_SeeUpDesc>
   <FOWAL_UpDepth>Alcance da visão para cima: {0} células</FOWAL_UpDepth>
   <FOWAL_UpDepthDesc>Até que distância de uma abertura, no andar de cima, um colono embaixo consegue ver.</FOWAL_UpDepthDesc>
+  <FOWAL_SeeShootable>Ver o que dá para atirar</FOWAL_SeeShootable>
+  <FOWAL_SeeShootableDesc>Se um colono tem linha de tiro até uma criatura, a mesma que o jogo usa para atirar (se inclinando na quina de uma parede ou janela), essa criatura é revelada, mesmo onde a névoa a esconderia. Vale também entre andares, com a linha de tiro do As above, So below II pelas aberturas.</FOWAL_SeeShootableDesc>
 </LanguageData>

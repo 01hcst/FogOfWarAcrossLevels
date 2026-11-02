@@ -11,12 +11,14 @@ namespace FogOfWarAcrossLevels
         public bool seeDown = true;
         public bool seeUp = true;
         public int upDepth = DefaultUpDepth;
+        public bool seeShootable = true;
 
         public override void ExposeData()
         {
             Scribe_Values.Look(ref seeDown, "seeDown", true);
             Scribe_Values.Look(ref seeUp, "seeUp", true);
             Scribe_Values.Look(ref upDepth, "upDepth", DefaultUpDepth);
+            Scribe_Values.Look(ref seeShootable, "seeShootable", true);
         }
     }
 
@@ -42,6 +44,7 @@ namespace FogOfWarAcrossLevels
                 list.Label("FOWAL_UpDepth".Translate(Settings.upDepth), tooltip: "FOWAL_UpDepthDesc".Translate());
                 Settings.upDepth = Mathf.RoundToInt(list.Slider(Settings.upDepth, 1f, FowalSettings.MaxUpDepth));
             }
+            list.CheckboxLabeled("FOWAL_SeeShootable".Translate(), ref Settings.seeShootable, "FOWAL_SeeShootableDesc".Translate());
             list.End();
         }
     }

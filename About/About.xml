@@ -13,8 +13,9 @@ Without it, each colonist only sees their own level: from a rooftop you can be s
 With it:
 - Looking down: what a colonist sees through open air (or over a wall top) on the level below is revealed, exactly the cells As above, So below II draws there. Works across several levels.
 - Looking up: a colonist on a lower level who sees a cell with open sky above it can see, through it, the roof cells near that opening (3 tiles by default), unless something on the roof blocks the line. A ceiling or roof above the colonist blocks the view up.
+- What can be shot can be seen: if a colonist has a line of fire to a creature (leaning out around a wall or window edge, as the game allows when shooting), that creature is revealed. This also works between levels, using As above, So below II's own line of fire through openings. Surveillance Shift alone only looks from the colonist's own tile, so enemies shot at from cover stayed hidden.
 
-Only what colonists see directly is carried across levels, so the two directions never chain into each other. Both directions and the upward depth can be changed in the mod settings.
+Only what colonists see directly is carried across levels, so the two directions never chain into each other. Both directions, the upward depth and the line-of-fire rule can be changed in the mod settings.
 
 Works with any modlist that has both mods. No compile-time dependency: if either mod changes its internals, this mod logs a warning and does nothing.</description>
   <modDependencies>
