@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>Fog of War Across Levels (Surveillance Shift + As above, So below II)</name>
+  <author>01hcst</author>
+  <packageId>01hcst.fogofwaracrosslevels</packageId>
+  <supportedVersions>
+    <li>1.7</li>
+  </supportedVersions>
+  <description>Lets Surveillance Shift's fog of war see between the levels of As above, So below II.
+
+Without it, each colonist only sees their own level: from a rooftop you can be shot by enemies on the ground, but they stay hidden in the fog, even though As above, So below II draws them through the open air.
+
+With it:
+- Looking down: what a colonist sees through open air (or over a wall top) on the level below is revealed, exactly the cells As above, So below II draws there. Works across several levels.
+- Looking up: a colonist on a lower level who sees a cell with open sky above it can see, through it, the roof cells near that opening (3 tiles by default), unless something on the roof blocks the line. A ceiling or roof above the colonist blocks the view up.
+
+Only what colonists see directly is carried across levels, so the two directions never chain into each other. Both directions and the upward depth can be changed in the mod settings.
+
+Works with any modlist that has both mods. No compile-time dependency: if either mod changes its internals, this mod logs a warning and does nothing.</description>
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+      <downloadUrl>https://github.com/pardeike/HarmonyRimWorld</downloadUrl>
+    </li>
+    <li>
+      <packageId>ferny.SurveillanceShift</packageId>
+      <displayName>Surveillance Shift</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3819508584</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>astryl.AsAboveSoBelow2</packageId>
+      <displayName>As above, So below II</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/3776015553</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>brrainz.harmony</li>
+    <li>ferny.SurveillanceShift</li>
+    <li>astryl.AsAboveSoBelow2</li>
+  </loadAfter>
+</ModMetaData>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <FOWAL_Title>Névoa de guerra entre andares</FOWAL_Title>
+  <FOWAL_SeeDown>Ver os andares de baixo</FOWAL_SeeDown>
+  <FOWAL_SeeDownDesc>Os colonos revelam o que veem pelo ar aberto (ou por cima de um topo de parede) nos andares de baixo.</FOWAL_SeeDownDesc>
+  <FOWAL_SeeUp>Ver os andares de cima</FOWAL_SeeUp>
+  <FOWAL_SeeUpDesc>Os colonos que veem uma célula com céu aberto acima dela também veem as células de telhado perto dessa abertura nos andares de cima.</FOWAL_SeeUpDesc>
+  <FOWAL_UpDepth>Alcance da visão para cima: {0} células</FOWAL_UpDepth>
+  <FOWAL_UpDepthDesc>Até que distância de uma abertura, no andar de cima, um colono embaixo consegue ver.</FOWAL_UpDepthDesc>
+</LanguageData>

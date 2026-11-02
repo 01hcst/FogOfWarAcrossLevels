@@ -1,0 +1,9 @@
+/home/henrique/.steam/debian-installation/steamapps/common/RimWorld/Mods/FogOfWarAcrossLevels/1.7/Assemblies/FogOfWarAcrossLevels.dll
+/home/henrique/.steam/debian-installation/steamapps/common/RimWorld/Mods/FogOfWarAcrossLevels/1.7/Assemblies/FogOfWarAcrossLevels.pdb
+/home/henrique/.steam/debian-installation/steamapps/common/RimWorld/Mods/FogOfWarAcrossLevels/Source/obj/Release/FogOfWarAcrossLevels.csproj.AssemblyReference.cache
+/home/henrique/.steam/debian-installation/steamapps/common/RimWorld/Mods/FogOfWarAcrossLevels/Source/obj/Release/FogOfWarAcrossLevels.GeneratedMSBuildEditorConfig.editorconfig
+/home/henrique/.steam/debian-installation/steamapps/common/RimWorld/Mods/FogOfWarAcrossLevels/Source/obj/Release/FogOfWarAcrossLevels.csproj.CoreCompileInputs.cache
+/home/henrique/.steam/debian-installation/steamapps/common/RimWorld/Mods/FogOfWarAcrossLevels/Source/obj/Release/FogOfWarAcrossLevels.dll
+/home/henrique/.steam/debian-installation/steamapps/common/RimWorld/Mods/FogOfWarAcrossLevels/Source/obj/Release/refint/FogOfWarAcrossLevels.dll
+/home/henrique/.steam/debian-installation/steamapps/common/RimWorld/Mods/FogOfWarAcrossLevels/Source/obj/Release/FogOfWarAcrossLevels.pdb
+/home/henrique/.steam/debian-installation/steamapps/common/RimWorld/Mods/FogOfWarAcrossLevels/Source/obj/Release/ref/FogOfWarAcrossLevels.dll

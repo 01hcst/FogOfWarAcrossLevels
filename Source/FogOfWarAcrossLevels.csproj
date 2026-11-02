@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- RimWorld 1.7 runs on .NET 10 (Waylith CLR). The local SDK may be older, so instead of
+       the SDK's framework reference packs we compile straight against the game's own BCL
+       assemblies (DisableImplicitFrameworkReferences). TargetFramework only picks the
+       compiler/SDK behaviour here. There is no 1.6 build.
+       -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>FogOfWarAcrossLevels</AssemblyName>
+    <RootNamespace>FogOfWarAcrossLevels</RootNamespace>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <!-- Override with -p:RimWorldDir=... / -p:HarmonyDllDir=... if paths differ. -->
+    <RimWorldDir Condition="'$(RimWorldDir)' == ''">/home/henrique/.steam/debian-installation/steamapps/common/RimWorld</RimWorldDir>
+    <HarmonyDllDir Condition="'$(HarmonyDllDir)' == ''">/home/henrique/.steam/debian-installation/steamapps/workshop/content/294100/2009463077/1.7/Assemblies</HarmonyDllDir>
+    <OutputPath>..\1.7\Assemblies\</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="$(RimWorldDir)/System.Runtime.dll" Private="false" />
+    <Reference Include="$(RimWorldDir)/System.Private.CoreLib.dll" Private="false" />
+    <Reference Include="$(RimWorldDir)/System.Collections.dll" Private="false" />
+    <Reference Include="$(RimWorldDir)/System.Linq.dll" Private="false" />
+    <Reference Include="$(RimWorldDir)/System.Security.Cryptography.dll" Private="false" />
+    <Reference Include="$(RimWorldDir)/System.Reflection.Emit.ILGeneration.dll" Private="false" />
+    <Reference Include="$(RimWorldDir)/System.Reflection.Primitives.dll" Private="false" />
+    <Reference Include="$(RimWorldDir)/Assembly-CSharp.dll" Private="false" />
+    <Reference Include="$(RimWorldDir)/RimWorld.dll" Private="false" />
+    <Reference Include="$(RimWorldDir)/UnityStubs.dll" Private="false" />
+    <Reference Include="$(HarmonyDllDir)/0Harmony.dll" Private="false" />
+  </ItemGroup>
+
+  <!-- Always compile against the RimWorld 1.7 Harmony (workshop 2009463077, 1.7 folder).
+       Fail the build instead of silently picking up another Harmony. -->
+  <Target Name="CheckHarmony17" BeforeTargets="ResolveAssemblyReferences">
+    <Error Condition="!Exists('$(HarmonyDllDir)/0Harmony.dll')" Text="0Harmony.dll not found in $(HarmonyDllDir)." />
+    <Error Condition="!$(HarmonyDllDir.Replace('\','/').TrimEnd('/').EndsWith('/1.7/Assemblies'))" Text="HarmonyDllDir must point to Harmony's 1.7/Assemblies folder (got $(HarmonyDllDir))." />
+  </Target>
+
+</Project>

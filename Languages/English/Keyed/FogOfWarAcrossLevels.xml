@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+  <FOWAL_Title>Fog of War Across Levels</FOWAL_Title>
+  <FOWAL_SeeDown>See the levels below</FOWAL_SeeDown>
+  <FOWAL_SeeDownDesc>Colonists reveal what they see through open air (or over a wall top) on the levels below.</FOWAL_SeeDownDesc>
+  <FOWAL_SeeUp>See the levels above</FOWAL_SeeUp>
+  <FOWAL_SeeUpDesc>Colonists who see a cell with open sky above it also see the roof cells near that opening on the levels above.</FOWAL_SeeUpDesc>
+  <FOWAL_UpDepth>Upward view depth: {0} tiles</FOWAL_UpDepth>
+  <FOWAL_UpDepthDesc>How far from an opening, on the level above, a colonist below can see.</FOWAL_UpDepthDesc>
+</LanguageData>
